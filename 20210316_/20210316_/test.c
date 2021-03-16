@@ -397,6 +397,6 @@ int main()
 int main()
 {
 	char arr[10] = "";
-	memset(arr, '#', 10); 
+	memset(arr, '#', 10);
 	return 0;
 }
