@@ -284,3 +284,35 @@ public:
         return nums;
     }
 };
+
+
+class string{
+public:
+    /构造
+    string(const char*str=""){
+        if(str==nullptr){
+            str="";
+        }
+        _str=new char[strlen(str)+1];
+        strcpy(_str,str);
+    }
+    //析构
+    ~string(){
+        if(_str){
+            delete[] _str;
+            _str=nullptr;
+        }
+    }
+    //拷贝构造
+    string(const string&s):_str(nullptr){
+        string strtmp(s._str);
+        swap(_str,strtmp);
+    }
+    //赋值运算符重载
+    string& operator=(string s){
+        swap(_str,s._str);
+        return *this;
+    }
+private:
+    char* _str;
+};
